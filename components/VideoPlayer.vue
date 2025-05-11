@@ -1,0 +1,45 @@
+<template>
+  <div class="video-container">
+    <iframe
+      width="100%"
+      height="100%"
+      title="YouTube video player"
+      :src="src"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    />
+  </div>
+</template>
+
+<script setup lang="ts">
+interface Props {
+  src?: string;
+}
+withDefaults(defineProps<Props>(), {
+  src: "https://www.youtube.com/embed/zmq2zu-UsRk",
+});
+</script>
+
+<style scoped>
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
+
+function withDefaults(arg0: any, arg1: { src: string; }) { throw new
+Error("Function not implemented."); }
