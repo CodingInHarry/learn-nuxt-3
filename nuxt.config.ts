@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: "2024-11-01",
+  compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   typescript: {
     shim: false,
@@ -8,15 +8,15 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    "nuxt-quasar-ui",
-    "@pinia/nuxt", // needed
-    "@pinia-plugin-persistedstate/nuxt",
+    'nuxt-quasar-ui',
+    '@pinia/nuxt', // needed
+    '@pinia-plugin-persistedstate/nuxt',
   ],
   quasar: {
-    plugins: ["Notify"],
+    plugins: ['Notify'],
     config: {
       notify: {
-        position: "top-right",
+        position: 'top-right',
       },
     },
   },
@@ -24,9 +24,19 @@ export default defineNuxtConfig({
   imports: {
     presets: [
       {
-        from: "vue-i18n",
-        imports: ["useI18n"],
+        from: 'vue-i18n',
+        imports: ['useI18n'],
       },
     ],
+  },
+  ssr: true,
+  app: {
+    head: {
+      title: 'Vue & Nuxt 강의',
+      meta: [
+        { name: 'description', content: 'Vue & Nuxt 강의' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      ],
+    },
   },
 });

@@ -4,12 +4,23 @@
   </NuxtLayout>
 </template>
 <script setup lang="ts">
-const nuxtApp = useNuxtApp();
-console.log("nuxtApp: ", nuxtApp);
-
-// vue application instance
-// nuxtApp.vueApp.component();
-// nuxtApp.vueApp.directive();
-
-// nuxtApp.provide("hello", (msg: string) => `hello ${msg}`);
+const title = ref('Vue & Nuxt');
+const description = ref('짐코딩과 함께 Nuxt3');
+useHead({
+  title,
+  meta: [
+    {
+      name: 'description',
+      content: description.value,
+    },
+  ],
+});
+useSeoMeta({
+  title,
+  description,
+  ogTitle: title.value,
+  ogDescription: description.value,
+  ogType: 'website',
+  ogImage: '/img/og-iamge.png',
+});
 </script>
